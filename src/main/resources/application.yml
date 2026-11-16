@@ -1,0 +1,32 @@
+spring:
+  application:
+    name:trade-hub
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tradehub
+    username: tradehub
+    password: tradehub
+  jpa:
+    hibernate:
+      ddl-auto: validate #Flyway owns the schema
+    flyway:
+      enabled: true
+
+camel:
+  component:
+    kafka:
+      brokers: localhost:9092
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: health, info, metrics
+
+tradehub:
+  topics:
+    inbound: trades.inbound
+  inbox: ./data/inbox
+
+logging:
+  file:
+    name: ./logs/trade-hub.log
