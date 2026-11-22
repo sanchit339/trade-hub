@@ -31,6 +31,54 @@ build/
 
 ### VS Code ###
 .vscode/
+*.code-workspace
 
 ### Local runtime ###
 logs/
+*.log
+*.log.*
+hs_err_pid*
+replay_pid*
+*.hprof
+*.pid
+
+# Camel drops CSV into this folder and moves results beside it.
+# Files already tracked stay tracked. Force-add a sample with git add -f.
+data/inbox/**
+**/.camelLock
+*.camelLock
+
+### Secrets and local overrides ###
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+application-local.*
+application-secret.*
+docker-compose.override.yml
+
+### OS and editor junk ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+*.tmp
+*.orig
+*.bak
+
+### Maven release leftovers ###
+.flattened-pom.xml
+dependency-reduced-pom.xml
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
